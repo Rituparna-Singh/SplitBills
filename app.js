@@ -11,7 +11,14 @@ function split(){
     let per = document.getElementById('person');
 
     let result = (amt.value / per.value).toFixed(2);
-    document.getElementById('results').innerText = "Each share will be " + result;
+
+    if(result == "NaN"){
+        document.getElementById('results').innerText = "No Data Entered";
+    }
+    else{
+        document.getElementById('results').innerText = "Each share will be " + result;
+    }
+    
     console.log(result);
 
     amt.value ='';
